@@ -1,7 +1,5 @@
-'use strict';
-
-const rule = require('../../../lib/rules/no-unsupported-keywords');
-const {RuleTester} = require('eslint');
+import rule from '../../../lib/rules/no-unsupported-keywords.js';
+import {RuleTester} from 'eslint';
 
 const ruleTester = new RuleTester();
 ruleTester.run('no-unsupported-keywords', rule, {

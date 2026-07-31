@@ -1,19 +1,19 @@
-const globals = require ('globals');
-const js = require('@eslint/js');
+import globals from 'globals';
+import js from '@eslint/js';
 
-module.exports = [
-    js.configs.recommended,
-    {
-        'ignores': [
-            '**/node_modules/*'
-        ],
-        'languageOptions': {
-            ecmaVersion: 2022,
-            globals: {
-                ...globals.builtin,
-                ...globals.node,
-            },
-        },
-        'rules': {}
-    }
+export default [
+  js.configs.recommended,
+  {
+    'ignores': [
+      '**/node_modules/*'
+    ],
+    'languageOptions': {
+      ecmaVersion: 2022,
+      globals: {
+        ...globals.builtin,
+        ...globals.node,
+      },
+    },
+    'rules': {}
+  }
 ];
