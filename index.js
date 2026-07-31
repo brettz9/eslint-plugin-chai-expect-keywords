@@ -1,4 +1,4 @@
-'use strict';
+import noUnsupportedKeywords from  './lib/rules/no-unsupported-keywords.js';
 
 const plugin = {
   meta: {
@@ -6,7 +6,7 @@ const plugin = {
     version: "3.0.0"
   },
   rules: {
-    'no-unsupported-keywords': require('./lib/rules/no-unsupported-keywords')
+    'no-unsupported-keywords': noUnsupportedKeywords
   },
   configs: {},
   processors: {}
@@ -43,4 +43,4 @@ Object.assign(plugin.configs, {
   }
 });
 
-module.exports = plugin;
+export default plugin;

@@ -6,3 +6,4 @@ test-results
 *results.xml
 package-lock.json
 .nyc_output
+coverage
