@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["es2024"],
+    "target": "es2017",
+    "module": "nodenext",
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "noEmit": true
+  },
+  "include": [
+    "index.js", "eslint.config.js", "lib", "tests"
+  ],
+  "exclude": ["node_modules"]
+}

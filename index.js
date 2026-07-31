@@ -1,5 +1,13 @@
 import noUnsupportedKeywords from  './lib/rules/no-unsupported-keywords.js';
 
+/**
+ * @type {import('eslint').ESLint.Plugin & {
+ *   configs: {
+ *     all: import('eslint').Linter.Config;
+ *     recommended: import('eslint').Linter.Config;
+ *   }
+ * }}
+ */
 const plugin = {
   meta: {
     name: "eslint-plugin-chai-expect-keywords",
@@ -8,7 +16,10 @@ const plugin = {
   rules: {
     'no-unsupported-keywords': noUnsupportedKeywords
   },
-  configs: {},
+  configs: {
+    all: {},
+    recommended: {}
+  },
   processors: {}
 };
 
