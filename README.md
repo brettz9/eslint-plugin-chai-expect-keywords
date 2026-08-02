@@ -21,8 +21,8 @@ For version 2.x:
 
 For version 3.x:
 
-- Node.js 18 or above
-- ESLint 9.x or above
+- Node.js 22.13+ or 24.15+
+- ESLint 9.0.0 or above (flat config)
 
 # Rules
 
