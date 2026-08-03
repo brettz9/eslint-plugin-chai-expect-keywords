@@ -7,9 +7,17 @@
     "Brett Zamir"
   ],
   "description": "ESLint plugin that checks for chai.js expect() assertions using non-existent keywords",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./index.js"
+    }
+  },
   "scripts": {
+    "tsc": "tsc",
+    "attw": "attw --profile esm-only --pack .",
     "lint": "eslint ./",
+    "build": "tsc -p tsconfig-prod.json && npm run attw",
     "test": "npm run lint && npm run unit-test",
     "unit-test": "c8 mocha tests/**/*.js"
   },
@@ -17,7 +25,8 @@
     "LICENSE",
     "README.md",
     "index.js",
-    "lib"
+    "lib",
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -32,13 +41,16 @@
     "eslint": ">=9.0.0"
   },
   "dependencies": {
+    "@types/estree": "^1.0.9",
     "globals": "^17.8.0"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
     "@eslint/js": "^10.0.1",
     "c8": "^12.0.0",
     "eslint": "^10.8.0",
-    "mocha": "^11.7.6"
+    "mocha": "^11.7.6",
+    "typescript": "^7.0.2"
   },
   "keywords": [
     "eslint",
