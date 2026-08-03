@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-chai-expect-keywords",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "type": "module",
   "author": "Gavin Aiken <gavin@aiken.org.uk>",
   "contributors": [
@@ -17,8 +17,10 @@
     "tsc": "tsc",
     "attw": "attw --profile esm-only --pack .",
     "lint": "eslint ./",
-    "build": "tsc -p tsconfig-prod.json && npm run attw",
-    "test": "npm run lint && npm run unit-test",
+    "build:types": "tsc -p tsconfig-prod.json",
+    "build": "npm run build:types && npm run attw",
+    "prepack": "npm run build:types",
+    "test": "npm run lint && npm run unit-test && npm run build",
     "unit-test": "c8 mocha tests/**/*.js"
   },
   "files": [
